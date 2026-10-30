@@ -47,17 +47,17 @@
 
   <!-- ==================== NAVIGATION BAR ==================== -->
   <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
-      <nav class="glass-panel rounded-2xl px-5 py-3.5 flex items-center justify-between border border-white/10 shadow-2xl shadow-black/40">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 pt-3 sm:pt-4">
+      <nav class="glass-panel rounded-2xl px-3.5 sm:px-5 py-3 flex items-center justify-between border border-white/10 shadow-2xl shadow-black/40 gap-2">
         
         <!-- Logo -->
-        <a href="#hero" class="flex items-center gap-3 group">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-indigo-600 to-pink-500 flex items-center justify-center font-bold text-white text-base shadow-lg shadow-indigo-500/30 group-hover:scale-105 transition-transform">
+        <a href="#hero" class="flex items-center gap-2.5 sm:gap-3 group min-w-0 flex-1 sm:flex-initial">
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-indigo-600 to-pink-500 flex items-center justify-center font-bold text-white text-sm sm:text-base shadow-lg shadow-indigo-500/30 group-hover:scale-105 transition-transform flex-shrink-0">
             AE
           </div>
-          <div class="flex flex-col">
-            <span class="font-bold text-sm sm:text-base tracking-tight text-white group-hover:text-indigo-300 transition-colors" data-i18n="heroName">Ayman Ayman El-Sayed</span>
-            <span class="text-[11px] text-cyan-400 font-mono">Galala University</span>
+          <div class="flex flex-col min-w-0">
+            <span class="font-bold text-xs sm:text-base tracking-tight text-white group-hover:text-indigo-300 transition-colors truncate" data-i18n="heroName">Ayman Ayman El-Sayed</span>
+            <span class="text-[10px] sm:text-[11px] text-cyan-400 font-mono truncate">Galala University</span>
           </div>
         </a>
 
@@ -71,22 +71,22 @@
         </div>
 
         <!-- Controls: Language Toggle + CTA + Mobile Menu Button -->
-        <div class="flex items-center gap-2.5 sm:gap-3">
+        <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
           
-          <!-- Language Toggle Button -->
-          <button class="lang-toggle-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold glass-pill text-cyan-300 hover:text-white hover:bg-white/10 border border-cyan-500/30 transition-all shadow-sm" aria-label="Toggle Language">
-            <i data-lucide="languages" class="w-4 h-4 text-cyan-400"></i>
+          <!-- Language Toggle Button (Visible & Easy to Tap on all screens) -->
+          <button class="lang-toggle-btn inline-flex items-center gap-1.5 px-3 py-2 min-h-[38px] rounded-xl text-xs font-bold glass-pill text-cyan-300 hover:text-white hover:bg-white/10 border border-cyan-500/40 transition-all shadow-sm active:scale-95" aria-label="Toggle Language">
+            <i data-lucide="languages" class="w-4 h-4 text-cyan-400 flex-shrink-0"></i>
             <span class="lang-label">العربية</span>
           </button>
 
           <!-- Desktop CTA Button -->
-          <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-gradient-to-r from-cyan-500 via-indigo-600 to-pink-500 text-white shadow-lg shadow-indigo-600/30 hover:brightness-110 transition-all hover:scale-[1.02] active:scale-[0.98]">
+          <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 min-h-[38px] rounded-xl text-xs font-semibold bg-gradient-to-r from-cyan-500 via-indigo-600 to-pink-500 text-white shadow-lg shadow-indigo-600/30 hover:brightness-110 transition-all hover:scale-[1.02] active:scale-[0.98]">
             <span data-i18n="navCta">Get in Touch</span>
             <i data-lucide="arrow-right" class="w-3.5 h-3.5 arrow-icon-flip"></i>
           </a>
 
           <!-- Mobile Hamburger Button -->
-          <button id="mobile-menu-btn" class="md:hidden p-2 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 transition-colors focus:outline-none" aria-label="Toggle menu">
+          <button id="mobile-menu-btn" class="md:hidden p-2 min-h-[38px] min-w-[38px] rounded-xl text-slate-300 hover:text-white hover:bg-white/10 transition-colors focus:outline-none flex items-center justify-center border border-white/5 active:scale-95" aria-label="Toggle menu">
             <i data-lucide="menu" class="w-6 h-6"></i>
           </button>
         </div>
@@ -94,35 +94,70 @@
     </div>
 
     <!-- Mobile Drawer Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-slate-950/90 backdrop-blur-2xl z-50 flex flex-col p-6 transition-all duration-300 opacity-0 pointer-events-none md:hidden">
-      <div class="flex items-center justify-between pb-6 border-b border-white/10">
+    <div id="mobile-menu" class="fixed inset-0 bg-slate-950/95 backdrop-blur-2xl z-50 flex flex-col p-6 transition-all duration-300 opacity-0 pointer-events-none md:hidden overflow-y-auto">
+      <!-- Drawer Top Bar -->
+      <div class="flex items-center justify-between pb-5 border-b border-white/10">
         <div class="flex items-center gap-3">
           <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 via-indigo-600 to-pink-500 flex items-center justify-center font-bold text-white text-base">
             AE
           </div>
-          <span class="font-bold text-white" data-i18n="heroName">Ayman Ayman El-Sayed</span>
+          <div class="flex flex-col">
+            <span class="font-bold text-sm text-white" data-i18n="heroName">Ayman Ayman El-Sayed</span>
+            <span class="text-[10px] text-cyan-400 font-mono">Galala University</span>
+          </div>
         </div>
-        <button id="close-mobile-menu" class="p-2 text-slate-400 hover:text-white">
+        <button id="close-mobile-menu" class="p-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 transition-colors active:scale-95" aria-label="Close menu">
           <i data-lucide="x" class="w-6 h-6"></i>
         </button>
       </div>
 
-      <div class="flex flex-col gap-4 py-8 text-lg font-medium">
-        <a href="#about" class="mobile-nav-link text-slate-300 hover:text-cyan-400 transition-colors" data-i18n="navAbout">About Me</a>
-        <a href="#skills" class="mobile-nav-link text-slate-300 hover:text-cyan-400 transition-colors" data-i18n="navSkills">Skills</a>
-        <a href="#projects" class="mobile-nav-link text-slate-300 hover:text-cyan-400 transition-colors" data-i18n="navProjects">Projects</a>
-        <a href="#cv" class="mobile-nav-link text-slate-300 hover:text-cyan-400 transition-colors" data-i18n="navCv">CV</a>
-        <a href="#contact" class="mobile-nav-link text-slate-300 hover:text-cyan-400 transition-colors" data-i18n="navContact">Contact</a>
+      <!-- Language Switcher Card Inside Mobile Menu (Prominent & Easy to Tap) -->
+      <div class="my-5 p-4 rounded-2xl glass-panel border border-cyan-500/30 bg-cyan-500/10 flex items-center justify-between gap-3 shadow-lg">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-300 flex items-center justify-center flex-shrink-0">
+            <i data-lucide="languages" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-white tracking-wide" data-i18n="langMenuLabel">Language / اللغة</p>
+            <p class="text-[11px] text-cyan-300/80 font-mono" data-i18n="langMenuSub">English & العربية</p>
+          </div>
+        </div>
+
+        <button class="lang-toggle-btn px-4 py-2.5 rounded-xl text-xs font-bold bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-md shadow-indigo-600/30 flex items-center gap-2 active:scale-95 transition-all flex-shrink-0" aria-label="Toggle Language">
+          <span class="lang-label">العربية</span>
+          <i data-lucide="arrow-right-left" class="w-3.5 h-3.5 arrow-icon-flip"></i>
+        </button>
       </div>
 
-      <div class="mt-auto pt-6 border-t border-white/10 flex flex-col gap-3">
-        <!-- Language Switcher in Mobile Menu -->
-        <button class="lang-toggle-btn w-full py-2.5 px-4 rounded-xl text-xs font-semibold glass-pill text-cyan-300 flex items-center justify-center gap-2">
-          <i data-lucide="languages" class="w-4 h-4 text-cyan-400"></i>
-          <span class="lang-label">العربية</span>
-        </button>
-        <a href="#contact" class="mobile-nav-link w-full py-3 text-center rounded-xl font-semibold bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-lg shadow-indigo-600/30" data-i18n="navCta">
-          Get in Touch
+      <!-- Navigation Links -->
+      <div class="flex flex-col gap-3 py-3 text-base sm:text-lg font-medium">
+        <a href="#about" class="mobile-nav-link p-3 rounded-xl hover:bg-white/5 text-slate-200 hover:text-cyan-400 transition-colors flex items-center justify-between" data-i18n="navAbout">
+          <span>About Me</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500 arrow-icon-flip"></i>
+        </a>
+        <a href="#skills" class="mobile-nav-link p-3 rounded-xl hover:bg-white/5 text-slate-200 hover:text-cyan-400 transition-colors flex items-center justify-between" data-i18n="navSkills">
+          <span>Skills</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500 arrow-icon-flip"></i>
+        </a>
+        <a href="#projects" class="mobile-nav-link p-3 rounded-xl hover:bg-white/5 text-slate-200 hover:text-cyan-400 transition-colors flex items-center justify-between" data-i18n="navProjects">
+          <span>Projects</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500 arrow-icon-flip"></i>
+        </a>
+        <a href="#cv" class="mobile-nav-link p-3 rounded-xl hover:bg-white/5 text-slate-200 hover:text-cyan-400 transition-colors flex items-center justify-between" data-i18n="navCv">
+          <span>CV</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500 arrow-icon-flip"></i>
+        </a>
+        <a href="#contact" class="mobile-nav-link p-3 rounded-xl hover:bg-white/5 text-slate-200 hover:text-cyan-400 transition-colors flex items-center justify-between" data-i18n="navContact">
+          <span>Contact</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500 arrow-icon-flip"></i>
+        </a>
+      </div>
+
+      <!-- Action Button at Bottom of Drawer -->
+      <div class="mt-auto pt-6 border-t border-white/10">
+        <a href="#contact" class="mobile-nav-link w-full py-3.5 text-center rounded-xl font-semibold bg-gradient-to-r from-cyan-500 via-indigo-600 to-pink-500 text-white shadow-lg shadow-indigo-600/30 flex items-center justify-center gap-2" data-i18n="navCta">
+          <span>Get in Touch</span>
+          <i data-lucide="arrow-right" class="w-4 h-4 arrow-icon-flip"></i>
         </a>
       </div>
     </div>

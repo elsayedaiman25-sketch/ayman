@@ -12,6 +12,8 @@ const i18nData = {
     navContact: "Contact",
     navCta: "Get in Touch",
     langToggle: "العربية",
+    langMenuLabel: "Language / اللغة",
+    langMenuSub: "English & العربية (RTL)",
 
     // Hero
     heroBadge: "Computer Science Student • Galala University",
@@ -128,6 +130,8 @@ const i18nData = {
     navContact: "تواصل معي",
     navCta: "تواصل معي",
     langToggle: "English",
+    langMenuLabel: "اللغة / Language",
+    langMenuSub: "العربية والإنجليزية",
 
     // Hero
     heroBadge: "طالب علوم الحاسب • جامعة الجلالة",

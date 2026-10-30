@@ -19,7 +19,7 @@ A modern, colorful, bilingual (**English & Arabic**) personal portfolio engineer
   2. **About Me:** Academic focus, youth ambition, and core learning pillars.
   3. **Skills:** Programming languages, CS foundations, and developer tools.
   4. **Projects:** Filterable showcase (`All`, `Academic`, `Personal`) with deep case study modals.
-  5. **CV / Resume:** Dedicated resume card with quick PDF download button.
+  5. **CV / Resume:** Dedicated resume card currently displaying coming soon status.
   6. **Contact:** Direct email copy, social links, location, and functional contact form.
 - **Zero Build Tools Needed:** Runs in any browser right out of the box with zero npm packages or complex installations.
 
