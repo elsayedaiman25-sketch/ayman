@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ayman Ayman El-Sayed - Computer Science Student at Galala University Portfolio" />
+  <meta name="author" content="Ayman Ayman El-Sayed" />
+  <title>Ayman Ayman El-Sayed | Computer Science Student • Galala University</title>
+
+  <!-- Google Fonts: Cairo (Arabic) & Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="bg-[#070a12] text-slate-100 antialiased selection:bg-indigo-500/30 selection:text-indigo-200 min-h-screen relative overflow-x-hidden">
+
+  <!-- Vibrant Colorful Ambient Background Glows -->
+  <div class="ambient-glow-1"></div>
+  <div class="ambient-glow-2"></div>
+  <div class="ambient-glow-3"></div>
+  <div class="ambient-glow-4"></div>
+
+  <!-- ==================== NAVIGATION BAR ==================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+      <nav class="glass-panel rounded-2xl px-5 py-3.5 flex items-center justify-between border border-white/10 shadow-2xl shadow-black/40">
+        
+        <!-- Logo -->
+        <a href="#hero" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-indigo-600 to-pink-500 flex items-center justify-center font-bold text-white text-base shadow-lg shadow-indigo-500/30 group-hover:scale-105 transition-transform">
+            AE
+          </div>
+          <div class="flex flex-col">
+            <span class="font-bold text-sm sm:text-base tracking-tight text-white group-hover:text-indigo-300 transition-colors" data-i18n="heroName">Ayman Ayman El-Sayed</span>
+            <span class="text-[11px] text-cyan-400 font-mono">Galala University</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+          <a href="#about" class="nav-link text-slate-300 hover:text-white transition-colors" data-i18n="navAbout">About Me</a>
+          <a href="#skills" class="nav-link text-slate-300 hover:text-white transition-colors" data-i18n="navSkills">Skills</a>
+          <a href="#projects" class="nav-link text-slate-300 hover:text-white transition-colors" data-i18n="navProjects">Projects</a>
+          <a href="#cv" class="nav-link text-slate-300 hover:text-white transition-colors" data-i18n="navCv">CV</a>
+          <a href="#contact" class="nav-link text-slate-300 hover:text-white transition-colors" data-i18n="navContact">Contact</a>
+        </div>
+
+        <!-- Controls: Language Toggle + CTA + Mobile Menu Button -->
+        <div class="flex items-center gap-2.5 sm:gap-3">
+          
+          <!-- Language Toggle Button -->
+          <button class="lang-toggle-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold glass-pill text-cyan-300 hover:text-white hover:bg-white/10 border border-cyan-500/30 transition-all shadow-sm" aria-label="Toggle Language">
+            <i data-lucide="languages" class="w-4 h-4 text-cyan-400"></i>
+            <span class="lang-label">العربية</span>
+          </button>
+
+          <!-- Desktop CTA Button -->
+          <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-gradient-to-r from-cyan-500 via-indigo-600 to-pink-500 text-white shadow-lg shadow-indigo-600/30 hover:brightness-110 transition-all hover:scale-[1.02] active:scale-[0.98]">
+            <span data-i18n="navCta">Get in Touch</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5 arrow-icon-flip"></i>
+          </a>
+
+          <!-- Mobile Hamburger Button -->
+          <button id="mobile-menu-btn" class="md:hidden p-2 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 transition-colors focus:outline-none" aria-label="Toggle menu">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile Drawer Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-slate-950/90 backdrop-blur-2xl z-50 flex flex-col p-6 transition-all duration-300 opacity-0 pointer-events-none md:hidden">
+      <div class="flex items-center justify-between pb-6 border-b border-white/10">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 via-indigo-600 to-pink-500 flex items-center justify-center font-bold text-white text-base">
+            AE
+          </div>
+          <span class="font-bold text-white" data-i18n="heroName">Ayman Ayman El-Sayed</span>
+        </div>
+        <button id="close-mobile-menu" class="p-2 text-slate-400 hover:text-white">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <div class="flex flex-col gap-4 py-8 text-lg font-medium">
+        <a href="#about" class="mobile-nav-link text-slate-300 hover:text-cyan-400 transition-colors" data-i18n="navAbout">About Me</a>
+        <a href="#skills" class="mobile-nav-link text-slate-300 hover:text-cyan-400 transition-colors" data-i18n="navSkills">Skills</a>
+        <a href="#projects" class="mobile-nav-link text-slate-300 hover:text-cyan-400 transition-colors" data-i18n="navProjects">Projects</a>
+        <a href="#cv" class="mobile-nav-link text-slate-300 hover:text-cyan-400 transition-colors" data-i18n="navCv">CV</a>
+        <a href="#contact" class="mobile-nav-link text-slate-300 hover:text-cyan-400 transition-colors" data-i18n="navContact">Contact</a>
+      </div>
+
+      <div class="mt-auto pt-6 border-t border-white/10 flex flex-col gap-3">
+        <!-- Language Switcher in Mobile Menu -->
+        <button class="lang-toggle-btn w-full py-2.5 px-4 rounded-xl text-xs font-semibold glass-pill text-cyan-300 flex items-center justify-center gap-2">
+          <i data-lucide="languages" class="w-4 h-4 text-cyan-400"></i>
+          <span class="lang-label">العربية</span>
+        </button>
+        <a href="#contact" class="mobile-nav-link w-full py-3 text-center rounded-xl font-semibold bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-lg shadow-indigo-600/30" data-i18n="navCta">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section id="hero" class="relative pt-36 pb-20 md:pt-44 md:pb-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      
+      <!-- Left Hero Text -->
+      <div class="lg:col-span-7 flex flex-col items-start space-y-6">
+        
+        <!-- University Badge -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full glass-panel border border-cyan-500/30 shadow-lg shadow-cyan-500/10">
+          <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse"></span>
+          <span class="text-xs font-semibold text-cyan-300 tracking-wide font-mono" data-i18n="heroBadge">
+            Computer Science Student • Galala University
+          </span>
+        </div>
+
+        <!-- Name & Title -->
+        <div class="space-y-3">
+          <p class="text-sm sm:text-base font-mono text-indigo-400 font-medium" data-i18n="heroGreeting">Hi, I'm</p>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
+            <span class="gradient-text-rainbow" data-i18n="heroName">Ayman Ayman El-Sayed</span>
+          </h1>
+          <p class="text-lg sm:text-xl text-slate-300 font-medium pt-1" data-i18n="heroRole">
+            Computer Science Student & Aspiring Software Engineer
+          </p>
+        </div>
+
+        <!-- Personal Motto / User's Quote Box -->
+        <div class="w-full p-5 rounded-2xl gradient-quote-box border border-pink-500/30 shadow-xl backdrop-blur-xl relative overflow-hidden">
+          <div class="flex items-start gap-3.5">
+            <div class="p-2 rounded-xl bg-pink-500/20 text-pink-400 flex-shrink-0 mt-0.5">
+              <i data-lucide="quote" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <p class="text-sm sm:text-base font-semibold text-white leading-relaxed italic" data-i18n="heroQuote">
+                “I don't compare myself to anyone. I want to show that even at a young age, you can achieve anything.”
+              </p>
+              <p class="text-xs text-pink-300 font-mono mt-1.5">— Ayman Ayman El-Sayed</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call to Action Buttons -->
+        <div class="flex flex-wrap items-center gap-3.5 pt-2 w-full sm:w-auto">
+          <a href="#projects" class="w-full sm:w-auto px-6 py-3.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-cyan-500 via-indigo-600 to-pink-500 text-white shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+            <span data-i18n="btnProjects">Explore Projects</span>
+            <i data-lucide="folder-code" class="w-4 h-4"></i>
+          </a>
+
+          <a href="#cv" class="w-full sm:w-auto px-6 py-3.5 rounded-xl font-semibold text-sm glass-pill text-cyan-200 hover:text-white hover:bg-white/10 border border-cyan-500/30 transition-all flex items-center justify-center gap-2">
+            <span data-i18n="btnCv">CV / Resume</span>
+            <i data-lucide="file-text" class="w-4 h-4"></i>
+          </a>
+
+          <a href="#contact" class="w-full sm:w-auto px-6 py-3.5 rounded-xl font-semibold text-sm glass-pill text-slate-200 hover:text-white hover:bg-white/10 transition-all flex items-center justify-center gap-2">
+            <span data-i18n="btnContact">Contact Me</span>
+            <i data-lucide="send" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <!-- Quick Connection Links -->
+        <div class="pt-6 border-t border-white/10 w-full flex flex-wrap items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <span class="text-xs uppercase tracking-wider text-slate-400 font-mono" data-i18n="heroConnect">Connect:</span>
+            
+            <!-- Direct Clickable Email Link & Copy -->
+            <a href="mailto:elsayedaiman25@gmail.com" class="p-2 sm:px-3 sm:py-2 rounded-xl glass-pill text-slate-300 hover:text-cyan-300 hover:border-cyan-400/40 transition-all flex items-center gap-2 group" title="mailto:elsayedaiman25@gmail.com">
+              <i data-lucide="mail" class="w-4 h-4 text-cyan-400"></i>
+              <span class="text-xs font-mono font-medium group-hover:text-cyan-300 transition-colors" dir="ltr">elsayedaiman25@gmail.com</span>
+            </a>
+
+            <!-- Copy Email Button -->
+            <button class="copy-email-btn p-2 rounded-xl glass-pill text-slate-300 hover:text-cyan-300 hover:border-cyan-400/40 transition-all" data-email="elsayedaiman25@gmail.com" title="Copy Email">
+              <i data-lucide="copy" class="w-4 h-4"></i>
+            </button>
+          </div>
+
+          <div class="flex items-center gap-2 text-xs font-mono text-cyan-300">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-cyan-400"></i>
+            <span data-i18n="heroLocation">Galala University • Egypt</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Hero: Colorful Student Profile Card -->
+      <div class="lg:col-span-5 relative">
+        <div class="relative mx-auto max-w-md lg:max-w-none">
+          
+          <div class="glass-panel rounded-3xl overflow-hidden border border-white/15 shadow-2xl shadow-indigo-950/60 backdrop-blur-2xl">
+            <!-- Header -->
+            <div class="px-5 py-3.5 bg-slate-900/90 border-b border-white/10 flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <div class="w-3 h-3 rounded-full bg-rose-500/80"></div>
+                <div class="w-3 h-3 rounded-full bg-amber-500/80"></div>
+                <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
+              </div>
+              <span class="text-xs font-mono text-slate-400 flex items-center gap-1.5" data-i18n="terminalTitle">
+                student_profile.json
+              </span>
+              <div class="w-10"></div>
+            </div>
+
+            <!-- Terminal Body -->
+            <div class="p-6 font-mono text-xs sm:text-sm text-slate-300 leading-relaxed space-y-2.5 overflow-x-auto">
+              <p class="text-slate-500">// Computer Science Student Profile</p>
+              
+              <p>
+                <span class="text-pink-400">{</span>
+              </p>
+              
+              <p class="ps-4">
+                <span class="text-cyan-300">"name":</span> <span class="text-amber-300">"Ayman Ayman El-Sayed"</span>,
+              </p>
+              <p class="ps-4">
+                <span class="text-cyan-300">"university":</span> <span class="text-amber-300">"Galala University"</span>,
+              </p>
+              <p class="ps-4">
+                <span class="text-cyan-300">"field":</span> <span class="text-indigo-300">"Computer Science"</span>,
+              </p>
+              <p class="ps-4">
+                <span class="text-cyan-300">"motto":</span> <span class="text-emerald-300">"Excellence has no age limit"</span>,
+              </p>
+              <p class="ps-4">
+                <span class="text-cyan-300">"passions":</span> [
+              </p>
+              <p class="ps-8 text-slate-300">
+                <span class="text-pink-300">"Algorithms"</span>, <span class="text-cyan-300">"Data Structures"</span>,
+              </p>
+              <p class="ps-8 text-slate-300">
+                <span class="text-amber-300">"Software Development"</span>, <span class="text-emerald-300">"Problem Solving"</span>
+              </p>
+              <p class="ps-4">
+                ],
+              </p>
+              <p class="ps-4">
+                <span class="text-cyan-300">"status":</span> <span class="text-emerald-400">"Learning, building, and open to opportunities"</span>
+              </p>
+              <p>
+                <span class="text-pink-400">}</span>
+              </p>
+
+              <div class="pt-4 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
+                <span class="flex items-center gap-1.5 text-emerald-400 font-sans">
+                  <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> Active Student
+                </span>
+                <span class="font-mono text-cyan-400">Galala CS</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Badge 1 -->
+          <div class="absolute -bottom-5 -start-4 sm:-start-6 glass-panel rounded-2xl px-4 py-3 border border-pink-500/30 shadow-xl flex items-center gap-3 animate-float">
+            <div class="w-9 h-9 rounded-xl bg-pink-500/20 text-pink-400 flex items-center justify-center">
+              <i data-lucide="zap" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-white" data-i18n="termBadgeFast">Young & Ambitious</p>
+              <p class="text-[11px] text-pink-300" data-i18n="termBadgeFastSub">No limits to what can be achieved</p>
+            </div>
+          </div>
+
+          <!-- Floating Badge 2 -->
+          <div class="absolute -top-4 -end-4 glass-panel rounded-2xl px-4 py-2 border border-cyan-500/30 shadow-xl flex items-center gap-2">
+            <i data-lucide="graduation-cap" class="w-4 h-4 text-cyan-400"></i>
+            <span class="text-xs font-mono font-medium text-slate-200">Galala Univ</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== HIGHLIGHT STATS ==================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+      
+      <div class="glass-panel rounded-2xl p-6 text-center border border-white/10 hover:border-cyan-500/40 transition-all">
+        <div class="text-3xl sm:text-4xl font-extrabold text-cyan-400">
+          <span>100</span><span class="text-cyan-400">%</span>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-300 font-medium mt-1.5" data-i18n="stat1Label">Curiosity & Focus</p>
+      </div>
+
+      <div class="glass-panel rounded-2xl p-6 text-center border border-white/10 hover:border-indigo-500/40 transition-all">
+        <div class="text-3xl sm:text-4xl font-extrabold text-indigo-400">
+          <span>CS</span>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-300 font-medium mt-1.5" data-i18n="stat2Label">Clean Code & Learning</p>
+      </div>
+
+      <div class="glass-panel rounded-2xl p-6 text-center border border-white/10 hover:border-pink-500/40 transition-all">
+        <div class="text-3xl sm:text-4xl font-extrabold text-pink-400">
+          <span>GU</span>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-300 font-medium mt-1.5" data-i18n="stat3Label">Academic & Personal Projects</p>
+      </div>
+
+      <div class="glass-panel rounded-2xl p-6 text-center border border-white/10 hover:border-emerald-500/40 transition-all">
+        <div class="text-3xl sm:text-4xl font-extrabold text-emerald-400">
+          <span>∞</span>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-300 font-medium mt-1.5" data-i18n="stat4Label">Belief in Excellence</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT ME SECTION ==================== -->
+  <section id="about" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full glass-pill text-xs font-mono text-cyan-400 mb-3 border border-cyan-500/20">
+        <i data-lucide="user-check" class="w-3.5 h-3.5"></i>
+        <span data-i18n="aboutBadge">MY JOURNEY & AMBITION</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight" data-i18n="aboutTitle">
+        Driven by Passion, Focused on <span class="gradient-text-rainbow">Growth</span>
+      </h2>
+      <p class="text-slate-400 mt-4 text-base leading-relaxed" data-i18n="aboutSubtitle">
+        Studying Computer Science at Galala University with a strong desire to master technology and make an impact.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- Narrative Card -->
+      <div class="lg:col-span-7 glass-panel rounded-3xl p-8 border border-white/10 space-y-6">
+        <div class="flex items-center gap-3 pb-2 border-b border-white/10">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center font-bold text-white">
+            <i data-lucide="book-open" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-white" data-i18n="heroName">Ayman Ayman El-Sayed</h3>
+            <p class="text-xs font-mono text-cyan-300" data-i18n="heroBadge">Computer Science Student • Galala University</p>
+          </div>
+        </div>
+
+        <p class="text-slate-300 leading-relaxed text-sm sm:text-base" data-i18n="aboutP1">
+          I am Ayman Ayman El-Sayed, a Computer Science student at Galala University. My core philosophy is simple: I don't compare myself to anyone. I want to show that even at a young age, you can achieve anything through dedication, discipline, and a deep curiosity for computing.
+        </p>
+
+        <p class="text-slate-300 leading-relaxed text-sm sm:text-base" data-i18n="aboutP2">
+          My university journey gives me a solid foundation in computer science fundamentals—algorithms, data structures, and software principles—while I continuously spend my time outside the classroom building projects and exploring modern technologies.
+        </p>
+
+        <!-- Quote Highlight inside About -->
+        <div class="p-4 rounded-2xl bg-slate-900/60 border border-white/10 flex items-center gap-3.5">
+          <i data-lucide="sparkles" class="w-5 h-5 text-amber-400 flex-shrink-0"></i>
+          <p class="text-xs sm:text-sm text-slate-300 italic" data-i18n="heroQuote">
+            “I don't compare myself to anyone. I want to show that even at a young age, you can achieve anything.”
+          </p>
+        </div>
+      </div>
+
+      <!-- Core Pillars -->
+      <div class="lg:col-span-5 space-y-4">
+        
+        <div class="glass-panel rounded-2xl p-6 border border-white/10 hover:border-cyan-500/40 transition-all">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center flex-shrink-0">
+              <i data-lucide="binary" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="text-base font-bold text-white" data-i18n="aboutPillar1Title">Strong Academic Foundations</h4>
+              <p class="text-xs text-slate-300 mt-1.5 leading-relaxed" data-i18n="aboutPillar1Desc">
+                Committed to deep mastery of computer science fundamentals, data structures, and algorithmic problem-solving at Galala University.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-panel rounded-2xl p-6 border border-white/10 hover:border-pink-500/40 transition-all">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-pink-500/10 text-pink-400 flex items-center justify-center flex-shrink-0">
+              <i data-lucide="target" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="text-base font-bold text-white" data-i18n="aboutPillar2Title">Relentless Ambition</h4>
+              <p class="text-xs text-slate-300 mt-1.5 leading-relaxed" data-i18n="aboutPillar2Desc">
+                Believing that youth is an advantage of energy, high adaptability, and limitless potential.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-panel rounded-2xl p-6 border border-white/10 hover:border-emerald-500/40 transition-all">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center flex-shrink-0">
+              <i data-lucide="code-2" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="text-base font-bold text-white" data-i18n="aboutPillar3Title">Hands-on Builder</h4>
+              <p class="text-xs text-slate-300 mt-1.5 leading-relaxed" data-i18n="aboutPillar3Desc">
+                Constantly turning theoretical computer science concepts into functional software and practical applications.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SKILLS SECTION ==================== -->
+  <section id="skills" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full glass-pill text-xs font-mono text-cyan-400 mb-3 border border-cyan-500/20">
+        <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+        <span data-i18n="skillsBadge">TECHNICAL TOOLBOX</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight" data-i18n="skillsTitle">
+        Core Competencies & <span class="gradient-text-cyan">Skills</span>
+      </h2>
+      <p class="text-slate-400 mt-4 text-base" data-i18n="skillsSubtitle">
+        Continuous learning and active development in computer science.
+      </p>
+    </div>
+
+    <!-- Skills Message Card -->
+    <div class="max-w-3xl mx-auto">
+      <div class="glass-panel rounded-3xl p-8 sm:p-14 border border-white/10 text-center relative overflow-hidden shadow-2xl flex flex-col items-center justify-center">
+        
+        <!-- Ambient glowing background orbs -->
+        <div class="absolute -top-10 -left-10 w-44 h-44 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-10 -right-10 w-44 h-44 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <!-- Pulsing Status Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill border border-cyan-500/30 mb-6 shadow-sm">
+          <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse"></span>
+          <span class="text-xs font-mono font-semibold text-cyan-300" data-i18n="skillsStatusBadge">
+            Active Learning & Practice
+          </span>
+        </div>
+
+        <!-- Icon Graphic -->
+        <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-gradient-to-tr from-cyan-500/20 via-indigo-600/20 to-pink-500/20 border border-white/15 flex items-center justify-center mb-6 shadow-2xl shadow-indigo-950/50">
+          <i data-lucide="code" class="w-10 h-10 sm:w-12 sm:h-12 text-cyan-400 animate-pulse"></i>
+        </div>
+
+        <!-- Prominent Main Message -->
+        <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-3">
+          <span class="gradient-text-cyan" data-i18n="skillsMessage">
+            “I’m currently developing my programming and computer science skills.”
+          </span>
+        </h3>
+
+        <!-- Subtitle Context Note -->
+        <p class="text-sm sm:text-base text-slate-300 max-w-lg leading-relaxed font-normal" data-i18n="skillsSubNote">
+          Focused on core fundamentals, algorithms, and practical software engineering at Galala University.
+        </p>
+
+        <!-- University CS Tag -->
+        <div class="mt-8 pt-6 border-t border-white/10 w-full flex items-center justify-center gap-2 text-xs font-mono text-cyan-300/80">
+          <i data-lucide="graduation-cap" class="w-4 h-4 text-cyan-400"></i>
+          <span>Galala University • Computer Science</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PROJECTS SECTION ==================== -->
+  <section id="projects" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full glass-pill text-xs font-mono text-purple-400 mb-3 border border-purple-500/20">
+          <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+          <span data-i18n="projectsBadge">PORTFOLIO WORK</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight" data-i18n="projectsTitle">
+          Featured <span class="gradient-text-purple">Projects</span>
+        </h2>
+        <p class="text-slate-400 mt-2 text-base max-w-xl" data-i18n="projectsSubtitle">
+          Academic coursework and personal software projects in active development.
+        </p>
+      </div>
+
+      <!-- Filter Controls -->
+      <div class="flex flex-wrap items-center gap-2 p-1.5 rounded-2xl glass-panel border border-white/10 self-start md:self-auto">
+        <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-indigo-600 text-white shadow-lg shadow-indigo-500/25 transition-all" data-filter="all">
+          <span data-i18n="filterAll">All Projects</span>
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-xl text-xs font-medium bg-slate-800/60 text-slate-300 hover:bg-slate-800 transition-all" data-filter="academic">
+          <span data-i18n="filterAcademic">Academic / Coursework</span>
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-xl text-xs font-medium bg-slate-800/60 text-slate-300 hover:bg-slate-800 transition-all" data-filter="personal">
+          <span data-i18n="filterPersonal">Personal Projects</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Projects Grid Container (Dynamically Rendered by main.js in English & Arabic) -->
+    <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Cards rendered dynamically by JS -->
+    </div>
+  </section>
+
+  <!-- ==================== CV SECTION ==================== -->
+  <section id="cv" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full glass-pill text-xs font-mono text-cyan-400 mb-3 border border-cyan-500/20">
+        <i data-lucide="file-check" class="w-3.5 h-3.5"></i>
+        <span data-i18n="cvBadge">CURRICULUM VITAE</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight" data-i18n="cvTitle">
+        My Resume & <span class="gradient-text-rainbow">Credentials</span>
+      </h2>
+      <p class="text-slate-400 mt-4 text-base" data-i18n="cvSubtitle">
+        Academic preparation and computer science studies at Galala University.
+      </p>
+    </div>
+
+    <div class="max-w-3xl mx-auto">
+      <div class="glass-panel rounded-3xl p-8 sm:p-14 border border-white/10 text-center relative overflow-hidden shadow-2xl flex flex-col items-center justify-center">
+        
+        <!-- Ambient glowing background orbs -->
+        <div class="absolute -top-10 -right-10 w-44 h-44 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-10 -left-10 w-44 h-44 bg-pink-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <!-- Pulsing Status Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill border border-cyan-500/30 mb-6 shadow-sm">
+          <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse"></span>
+          <span class="text-xs font-mono font-semibold text-cyan-300" data-i18n="cvStatusBadge">
+            In Preparation
+          </span>
+        </div>
+
+        <!-- Icon Graphic -->
+        <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-gradient-to-tr from-cyan-500/20 via-indigo-600/20 to-pink-500/20 border border-white/15 flex items-center justify-center mb-6 shadow-2xl shadow-indigo-950/50">
+          <i data-lucide="file-text" class="w-10 h-10 sm:w-12 sm:h-12 text-cyan-400 animate-pulse"></i>
+        </div>
+
+        <!-- Prominent Main Message -->
+        <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-3">
+          <span class="gradient-text-rainbow" data-i18n="cvMessage">
+            “My CV will be available soon.”
+          </span>
+        </h3>
+
+        <!-- Subtitle Context Note -->
+        <p class="text-sm sm:text-base text-slate-300 max-w-lg leading-relaxed font-normal" data-i18n="cvSubNote">
+          Currently compiling academic coursework, technical milestones, and project summaries at Galala University.
+        </p>
+
+        <!-- University CS Tag -->
+        <div class="mt-8 pt-6 border-t border-white/10 w-full flex items-center justify-center gap-2 text-xs font-mono text-cyan-300/80">
+          <i data-lucide="graduation-cap" class="w-4 h-4 text-cyan-400"></i>
+          <span>Galala University • Computer Science</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT SECTION ==================== -->
+  <section id="contact" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full glass-pill text-xs font-mono text-cyan-400 mb-3 border border-cyan-500/20">
+        <i data-lucide="mail-check" class="w-3.5 h-3.5"></i>
+        <span data-i18n="contactBadge">GET IN TOUCH</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight" data-i18n="contactTitle">
+        Let's <span class="gradient-text-cyan">Connect</span>
+      </h2>
+      <p class="text-slate-400 mt-4 text-base" data-i18n="contactSubtitle">
+        Have an internship, project opportunity, or want to collaborate? Feel free to reach out anytime.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      
+      <!-- Direct Contact Info Cards -->
+      <div class="lg:col-span-5 space-y-6">
+        
+        <div class="glass-panel rounded-3xl p-7 border border-white/10 space-y-5">
+          <h3 class="text-lg font-bold text-white" data-i18n="contactSocialLabel">Direct Information</h3>
+          
+          <div class="space-y-4">
+            
+            <!-- Email (Clickable mailto link + Copy Button) -->
+            <div class="flex items-center justify-between p-4 rounded-2xl bg-slate-900/60 border border-white/5 hover:border-cyan-500/40 transition-all group">
+              <a href="mailto:elsayedaiman25@gmail.com" class="flex items-center gap-3.5 flex-1 min-w-0" title="mailto:elsayedaiman25@gmail.com">
+                <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center flex-shrink-0 group-hover:bg-cyan-500/20 transition-colors">
+                  <i data-lucide="mail" class="w-5 h-5"></i>
+                </div>
+                <div class="min-w-0">
+                  <p class="text-xs text-slate-400" data-i18n="contactEmailLabel">Direct Email</p>
+                  <p class="text-xs sm:text-sm font-medium text-white group-hover:text-cyan-300 transition-colors font-mono truncate" dir="ltr">
+                    elsayedaiman25@gmail.com
+                  </p>
+                </div>
+              </a>
+              <button class="copy-email-btn p-2.5 rounded-lg text-slate-400 hover:text-cyan-300 hover:bg-white/5 transition-colors flex-shrink-0 ms-2" data-email="elsayedaiman25@gmail.com" title="Copy Email">
+                <i data-lucide="copy" class="w-4 h-4"></i>
+              </button>
+            </div>
+
+            <!-- University & Location -->
+            <div class="flex items-center gap-3.5 p-4 rounded-2xl bg-slate-900/60 border border-white/5">
+              <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-xs text-slate-400" data-i18n="contactLocationLabel">Location & Study</p>
+                <p class="text-xs sm:text-sm font-medium text-white" data-i18n="contactLocationValue">Galala University, Egypt</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="pt-3 border-t border-white/10 flex items-center gap-3 text-xs text-slate-400">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span data-i18n="responseRate">Open to student internships, mentorship, and tech collaborations</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Contact Message Form -->
+      <div class="lg:col-span-7">
+        <div class="glass-panel rounded-3xl p-7 sm:p-9 border border-white/10">
+          <h3 class="text-xl font-bold text-white mb-2" data-i18n="contactFormTitle">Send a Message</h3>
+          <p class="text-xs sm:text-sm text-slate-400 mb-6" data-i18n="contactFormSub">
+            Leave a note and I will get back to you as soon as possible.
+          </p>
+
+          <form id="contact-form" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="name" class="block text-xs font-medium text-slate-300 mb-1.5" data-i18n="formName">Your Name *</label>
+                <input type="text" id="name" required placeholder="Name" data-i18n-placeholder="formName" class="w-full px-4 py-3 rounded-xl bg-slate-900/70 border border-white/10 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-colors" />
+              </div>
+              <div>
+                <label for="email" class="block text-xs font-medium text-slate-300 mb-1.5" data-i18n="formEmail">Your Email *</label>
+                <input type="email" id="email" required placeholder="Email" data-i18n-placeholder="formEmail" class="w-full px-4 py-3 rounded-xl bg-slate-900/70 border border-white/10 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-colors" />
+              </div>
+            </div>
+
+            <div>
+              <label for="subject" class="block text-xs font-medium text-slate-300 mb-1.5" data-i18n="formSubject">Subject</label>
+              <input type="text" id="subject" placeholder="Subject" data-i18n-placeholder="formSubject" class="w-full px-4 py-3 rounded-xl bg-slate-900/70 border border-white/10 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-colors" />
+            </div>
+
+            <div>
+              <label for="message" class="block text-xs font-medium text-slate-300 mb-1.5" data-i18n="formMessage">Message *</label>
+              <textarea id="message" rows="4" required placeholder="Message" data-i18n-placeholder="formMessage" class="w-full px-4 py-3 rounded-xl bg-slate-900/70 border border-white/10 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-colors"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-3.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-cyan-500 via-indigo-600 to-pink-500 text-white shadow-lg shadow-indigo-600/30 hover:brightness-110 active:scale-[0.99] transition-all flex items-center justify-center gap-2">
+              <span data-i18n="btnSend">Send Message</span>
+              <i data-lucide="send" class="w-4 h-4"></i>
+            </button>
+
+            <p class="text-xs text-slate-400 text-center pt-2" data-i18n="formMailtoNotice">
+              Clicking Send will open your email app with your message prepared.
+            </p>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="border-t border-white/10 py-10 relative z-10 bg-slate-950/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-cyan-500 via-indigo-600 to-pink-500 flex items-center justify-center font-bold text-white text-xs">
+          AE
+        </div>
+        <p class="text-xs text-slate-400" data-i18n="footerRights">
+          Built by Ayman Ayman El-Sayed • Computer Science at Galala University
+        </p>
+      </div>
+
+      <div class="flex items-center gap-6 text-xs text-slate-400 font-mono">
+        <a href="#hero" class="hover:text-cyan-400 transition-colors flex items-center gap-1">
+          <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
+          <span data-i18n="footerBackToTop">Back to Top</span>
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================== PROJECT DETAILS MODAL ==================== -->
+  <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md modal-closed">
+    <div id="modal-content" class="glass-panel w-full max-w-2xl rounded-3xl border border-white/15 p-6 sm:p-8 shadow-2xl overflow-y-auto max-h-[90vh]">
+      
+      <!-- Modal Header -->
+      <div class="flex items-start justify-between pb-4 border-b border-white/10 gap-4">
+        <div>
+          <h3 id="modal-title" class="text-xl sm:text-2xl font-bold text-white">Project Title</h3>
+          <p id="modal-desc" class="text-xs sm:text-sm text-cyan-300 mt-1">Subtitle</p>
+        </div>
+        <button id="modal-close-btn" class="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-white/10 transition-colors">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="py-6 space-y-6">
+        <div>
+          <h4 class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2" data-i18n="modalTechTitle">Technologies & Tools</h4>
+          <div id="modal-tags" class="flex flex-wrap gap-2"></div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-slate-900/60 border border-white/5 space-y-1">
+          <h4 class="text-xs font-bold text-cyan-300 flex items-center gap-1.5 uppercase font-mono">
+            <i data-lucide="target" class="w-3.5 h-3.5"></i>
+            <span data-i18n="modalProblemTitle">Project Objective & Overview</span>
+          </h4>
+          <p id="modal-problem" class="text-xs sm:text-sm text-slate-300 leading-relaxed"></p>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-slate-900/60 border border-white/5 space-y-1">
+          <h4 class="text-xs font-bold text-emerald-300 flex items-center gap-1.5 uppercase font-mono">
+            <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i>
+            <span data-i18n="modalSolutionTitle">Implementation & Architecture</span>
+          </h4>
+          <p id="modal-solution" class="text-xs sm:text-sm text-slate-300 leading-relaxed"></p>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2" data-i18n="modalHighlightsTitle">Key Technical Highlights</h4>
+          <ul id="modal-highlights" class="space-y-2"></ul>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="pt-4 border-t border-white/10 flex flex-wrap items-center justify-end gap-3">
+        <a id="modal-github-link" href="#" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl text-xs font-semibold glass-pill text-slate-300 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2">
+          <i data-lucide="github" class="w-4 h-4"></i>
+          <span data-i18n="btnSource">Source Code</span>
+        </a>
+        <a id="modal-live-link" href="#" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl text-xs font-semibold bg-cyan-600 text-white hover:bg-cyan-500 transition-colors flex items-center gap-2">
+          <span data-i18n="btnLive">Live Demo</span>
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== TOAST NOTIFICATION ==================== -->
+  <div id="toast" class="fixed bottom-6 end-6 z-50 glass-panel border border-white/15 px-5 py-4 rounded-2xl shadow-2xl flex items-center gap-3 hidden-toast">
+    <i id="toast-icon" data-lucide="info" class="w-5 h-5 text-cyan-400"></i>
+    <span id="toast-message" class="text-sm font-medium text-slate-200">Notification message</span>
+  </div>
+
+  <!-- Main JavaScript -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+/* Custom Portfolio Styling & Glassmorphic Effects */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --accent-cyan: #06b6d4;
+  --accent-indigo: #6366f1;
+  --accent-purple: #a855f7;
+  --accent-pink: #ec4899;
+  --accent-emerald: #10b981;
+  --accent-amber: #f59e0b;
+  --bg-deep: #070a12;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-deep);
+  color: #f1f5f9;
+}
+
+/* Arabic RTL Typography */
+html[dir="rtl"], html[dir="rtl"] body {
+  font-family: 'Cairo', 'Plus Jakarta Sans', sans-serif;
+  direction: rtl;
+}
+
+html[dir="rtl"] .font-mono {
+  font-family: 'JetBrains Mono', 'Cairo', monospace;
+}
+
+code, .font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Glassmorphism Primitives */
+.glass-panel {
+  background: rgba(13, 19, 33, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(22, 31, 53, 0.82);
+  border-color: rgba(129, 140, 248, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.25);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+/* Rich Colorful Gradients */
+.gradient-text-rainbow {
+  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 35%, #ec4899 70%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-cyan {
+  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-purple {
+  background: linear-gradient(135deg, #c084fc 0%, #f43f5e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-quote-box {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.12) 0%, rgba(236, 72, 153, 0.12) 50%, rgba(245, 158, 11, 0.1) 100%);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  position: relative;
+}
+
+/* Vibrant Colorful Ambient Glows */
+.ambient-glow-1 {
+  position: absolute;
+  top: 2%;
+  left: 10%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, transparent 70%);
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ambient-glow-2 {
+  position: absolute;
+  top: 35%;
+  right: 5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.18) 0%, transparent 70%);
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ambient-glow-3 {
+  position: absolute;
+  bottom: 12%;
+  left: 15%;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.16) 0%, transparent 70%);
+  filter: blur(95px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ambient-glow-4 {
+  position: absolute;
+  top: 70%;
+  right: 20%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #070a12;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+  border: 2px solid #070a12;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Toast Notification */
+#toast {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+#toast.hidden-toast {
+  transform: translateY(100px) scale(0.95);
+  opacity: 0;
+  pointer-events: none;
+}
+
+#toast.show-toast {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Modal styling */
+#project-modal {
+  transition: opacity 0.25s ease;
+}
+
+#project-modal.modal-closed {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#project-modal.modal-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#modal-content {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#project-modal.modal-closed #modal-content {
+  transform: scale(0.95) translateY(12px);
+}
+
+#project-modal.modal-open #modal-content {
+  transform: scale(1) translateY(0);
+}
+
+/* RTL adjustment for list icons & direction indicators */
+html[dir="rtl"] .arrow-icon-flip {
+  transform: scaleX(-1);
+}
